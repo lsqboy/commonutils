@@ -9,7 +9,9 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.6.2'
-        
+        classpath 'com.novoda:bintray-release:0.8.0'
+
+
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -26,4 +28,20 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+
+ext {
+
+//-------- bintray config -----------
+    userOrg = "lianyoujie9"//bintray.com用户名
+    groupId = "com.lianyoujie9"//jcenter上的路径
+    publishVersion = "0.0.1"//版本号
+    siteUrl = 'https://github.com/lsqboy/commonutils'
+    gitUrl = 'https://github.com/lsqboy/commonutils.git'
+    website = 'https://github.com/lsqboy/commonutils'
+    uploadName = "DevUtils" //上传在bintray的文件夹
+    licences = ["Apache-2.0"]
+// --------bintray config-----
+
 }

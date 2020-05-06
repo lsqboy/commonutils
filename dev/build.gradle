@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 29
@@ -21,6 +22,10 @@ android {
         }
     }
 
+    lintOptions {
+        abortOnError false
+    }
+
 }
 
 dependencies {
@@ -36,4 +41,19 @@ dependencies {
     //    一个强大易用的安卓工具类库
     implementation 'com.blankj:utilcode:1.22.10'
 
+}
+
+//添加
+publish {
+    repoName = 'maven'
+    repoName = 'DevUtils'
+
+    artifactId = 'DevUtils'//模块名称
+    userOrg = rootProject.userOrg
+    groupId = rootProject.groupId
+    uploadName = rootProject.uploadName //模块上传后所在的文件夹名称
+    publishVersion = rootProject.publishVersion//模块版本号
+    desc = rootProject.description//模块的描述
+    website = rootProject.website //模块的网站
+    licences = rootProject.licences //模块的licences
 }
